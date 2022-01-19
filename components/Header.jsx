@@ -1,5 +1,12 @@
+import { useState } from "react"
+import Navigation from "./Navigation"
 
 const Header = () => {
+  const [toggleNav, setToggleNav] = useState(false)
+
+  const onToggleNav = () => {
+    setToggleNav((prevState) => { return !prevState })
+  }
 
   return (
     <header className="header">
@@ -8,7 +15,8 @@ const Header = () => {
           <div className="header__logo">
 
           </div>
-          <div className="header__menu" role="button"><h5>Menu</h5></div>
+          <button className="header__menu" onClick={onToggleNav}><h5>{toggleNav ? 'Close' : 'Menu'}</h5></button>
+          <Navigation open={toggleNav} />
         </div>
       </div>
     </header>

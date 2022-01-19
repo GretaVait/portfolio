@@ -33,3 +33,7 @@
     font-weight: 600
     font-size: 1.6rem
     margin-top: 1.6rem
+    @include transition(color)
+    @media (hover: hover)
+      &:hover
+        color: transparentize($pink, .4)
