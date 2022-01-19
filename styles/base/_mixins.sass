@@ -1,0 +1,13 @@
+@mixin transition($prop: all, $duration: .25s, $transition: ease-in-out, $delay: 0s)
+  transition: $prop $duration $transition $delay
+  @if ($prop != all)
+    will-change: $prop
+
+@mixin flex($align: stretch, $justify: flex-start, $dir: row, $wrap: nowrap, $single: false, $grow: 0)
+  display: flex
+  @if ($single == false)
+    flex-direction: $dir
+    align-items: $align
+    justify-content: $justify
+    flex-wrap: $wrap
+    flex-grow: $grow
