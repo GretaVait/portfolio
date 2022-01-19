@@ -1,10 +1,15 @@
+// Components
+import Seperator from "@components/Seperator"
 
 const Contact = () => {
 
   return (
     <section className="contact">
       <div className="container">
-        <h2 className="contact__title">Contact</h2>
+        <h2 className="contact__title">
+          <span>Contact</span>
+          <Seperator />
+        </h2>
 
         <div className="contact__wrapper">
           <div className="contact__social">

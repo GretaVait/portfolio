@@ -1,3 +1,5 @@
+// Components
+import Seperator from "@components/Seperator"
 
 const Projects = () => {
 
@@ -17,6 +19,8 @@ const Projects = () => {
             <h5>Design</h5>
           </div>
         </div>
+
+        <Seperator />
       </div>
     </section>
   )

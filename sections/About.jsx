@@ -1,10 +1,15 @@
+// Components
+import Seperator from "@components/Seperator"
 
 const About = () => {
 
   return (
     <section className="about">
       <div className="container">
-        <h2 className="about__title">About</h2>
+        <h2 className="about__title">
+          <span>About</span>
+          <Seperator />
+        </h2>
 
         <div className="about__list">
           <AboutCard title="Dev" skills={["React.js", "HTML", "CSS, Sass", "Next.js"]} />

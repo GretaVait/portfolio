@@ -1,5 +1,9 @@
+// Base
 import { useState } from "react"
+
+// Components
 import Navigation from "./Navigation"
+import Seperator from "./Seperator"
 
 const Header = () => {
   const [toggleNav, setToggleNav] = useState(false)
@@ -18,6 +22,7 @@ const Header = () => {
           <button className="header__menu" onClick={onToggleNav}><h5>{toggleNav ? 'Close' : 'Menu'}</h5></button>
           <Navigation open={toggleNav} />
         </div>
+        <Seperator />
       </div>
     </header>
   )
