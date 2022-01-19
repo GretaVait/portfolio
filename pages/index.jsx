@@ -5,6 +5,9 @@ import Image from 'next/image'
 // Components
 import Header from '@components/Header'
 
+// Sections
+import Intro from '@sections/Intro'
+
 export default function Home() {
   return (
     <div>
@@ -16,6 +19,8 @@ export default function Home() {
       <Header />
 
       <main>
+
+        <Intro />
 
       </main>
     </div>
