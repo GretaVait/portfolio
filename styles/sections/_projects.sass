@@ -1,7 +1,13 @@
 .projects
 
+  &__wrapper
+    @media screen and ( min-width: 768px )
+      @include flex($align: center, $justify: space-between)
+
   &__title
     margin-bottom: 1.6rem
+    @media screen and ( min-width: 768px )
+      margin-bottom: 0
 
   &__filter
     @include flex()
