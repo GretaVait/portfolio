@@ -4,7 +4,7 @@ import Seperator from "@components/Seperator"
 const Projects = () => {
 
   return (
-    <section className="projects">
+    <section className="projects" id="projects">
       <div className="container">
 
         <div className="projects__wrapper">

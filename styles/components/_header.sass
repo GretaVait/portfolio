@@ -1,5 +1,10 @@
 .header
-  position: relative
+  position: fixed
+  width: 100%
+  top: 0
+  left: 0
+  background-color: $beige
+  z-index: 2
 
   &__wrapper
     @include flex($align: center, $justify: space-between)
@@ -11,7 +16,7 @@
     @include flex()
     li
       
-      a
+      h5
         display: inline-block
         position: relative
         padding: 0 3.2rem

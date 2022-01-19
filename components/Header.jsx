@@ -3,6 +3,7 @@ import { useState } from "react"
 
 // Lib
 import { useMediaQuery } from '@lib/useMediaQuery'
+import scrollTo from "@client-api/smoothScroll"
 
 // Components
 import Navigation from "./Navigation"
@@ -28,9 +29,9 @@ const Header = () => {
           {
             isDesktop ?
             <ul className="header__navigation">
-                <li><h5><a href="#">Projects</a></h5></li>
-                <li><h5><a href="#">About</a></h5></li>
-                <li><h5><a href="#">Contact</a></h5></li>
+                <li><h5 onClick={() => { scrollTo('elem', 'projects', 0) }} role="button">Projects</h5></li>
+                <li><h5 onClick={() => { scrollTo('elem', 'about', 0) }} role="button">About</h5></li>
+                <li><h5 onClick={() => { scrollTo('elem', 'contact', 0) }} role="button">Contact</h5></li>
               </ul>
             :
               <>
@@ -39,7 +40,6 @@ const Header = () => {
               </>
           }
         </div>
-        <Seperator />
       </div>
     </header>
   )
