@@ -9,6 +9,7 @@ import Header from '@components/Header'
 import Intro from '@sections/Intro'
 import Projects from '@sections/Projects'
 import About from '@sections/About'
+import Contact from '@sections/Contact'
 
 export default function Home() {
   return (
@@ -27,6 +28,8 @@ export default function Home() {
         <Projects />
 
         <About />
+
+        <Contact />
 
       </main>
     </div>

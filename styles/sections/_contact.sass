@@ -1,0 +1,35 @@
+.contact
+
+  &__title
+    margin-bottom: 3.2rem
+
+  &__wrapper
+    @include flex()
+
+  &__social
+    margin-right: 4rem
+
+    &__item
+      a
+        display: inline-block
+        text-decoration: none
+        color: inherit
+        position: relative
+        padding: 0 1.6rem
+        @media (hover: hover)
+          &:hover
+            &::after
+              opacity: 1
+        
+        &::after
+          content: ''
+          @extend .active-indicator
+          opacity: 0
+          @include transition(opacity)
+
+  &__link
+    display: inline-block
+    color: $pink
+    font-weight: 600
+    font-size: 1.6rem
+    margin-top: 1.6rem
