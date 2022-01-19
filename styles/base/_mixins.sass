@@ -11,3 +11,9 @@
     justify-content: $justify
     flex-wrap: $wrap
     flex-grow: $grow
+
+@mixin positionCenter($transform: '')
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: $transform translate(-50%, -50%)

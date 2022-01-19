@@ -7,6 +7,7 @@ import Header from '@components/Header'
 
 // Sections
 import Intro from '@sections/Intro'
+import Projects from '@sections/Projects'
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
       <main>
 
         <Intro />
+
+        <Projects />
 
       </main>
     </div>
