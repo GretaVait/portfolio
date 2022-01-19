@@ -23,14 +23,15 @@
       position: relative
       margin: 0 1.2rem
       white-space: nowrap
+      @media (hover: hover)
+        &:hover
+          &::after
+            opacity: 1
+      
+      &::after
+        @extend .active-indicator
 
       &.active
-        &::after
-          opacity: 1
-
-      &::after
-        content: ''
-        opacity: 0
-        @extend .active-indicator
-        @include transition(opacity)
+        h5
+          color: $pink
         
