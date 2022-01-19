@@ -1,7 +1,7 @@
 const Navigation = ({ open }) => {
 
   return (
-    <nav className={`navigation ${open ? 'active' : ''}`}>
+    <nav className={`mobile-navigation ${open ? 'active' : ''}`}>
       <ul>
         <li>
           <h5><a href="#">Projects</a></h5>

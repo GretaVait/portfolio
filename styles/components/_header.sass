@@ -4,3 +4,21 @@
   &__wrapper
     @include flex($align: center, $justify: space-between)
     padding: 1.6rem 0
+
+  &__navigation
+    @include flex()
+    li
+      
+      a
+        display: inline-block
+        position: relative
+        padding: 0 3.2rem
+        @media (hover: hover)
+          &:hover
+            &::after
+              opacity: 1
+        &::after
+          content: ''
+          @extend .active-indicator
+          opacity: 0
+          @include transition(opacity)
