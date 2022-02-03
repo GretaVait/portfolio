@@ -3,11 +3,10 @@ import { useState } from "react"
 
 // Lib
 import { useMediaQuery } from '@lib/useMediaQuery'
-import scrollTo from "@client-api/smoothScroll"
 
 // Components
 import Navigation from "./Navigation"
-import Seperator from "./Seperator"
+import Image from "next/image"
 
 const Header = () => {
   const isDesktop = useMediaQuery('(min-width: 768px)')
@@ -23,26 +22,35 @@ const Header = () => {
       <div className="container">
         <div className="header__wrapper">
           <div className="header__logo">
-
+            <Image 
+              src="/images/logo.svg"
+              width={98}
+              height={40}
+              alt="Logo"
+            />
           </div>
 
-          {
-            isDesktop ?
-            <ul className="header__navigation">
-                <li><h5 onClick={() => { scrollTo('elem', 'projects', 0) }} role="button">Projects</h5></li>
-                <li><h5 onClick={() => { scrollTo('elem', 'about', 0) }} role="button">About</h5></li>
-                <li><h5 onClick={() => { scrollTo('elem', 'contact', 0) }} role="button">Contact</h5></li>
-              </ul>
-            :
-              <>
-                <button className="header__menu" onClick={onToggleNav}><h5>{toggleNav ? 'Close' : 'Menu'}</h5></button>
-                <Navigation open={toggleNav} />
-              </>
-          }
+          <nav>
+            {
+              isDesktop ?
+                <ul className="header__navigation">
+                  <Navigation />
+                </ul>
+              :
+                <>
+                  <button className="header__menu" onClick={onToggleNav}><h5>{toggleNav ? 'Close' : 'Menu'}</h5></button>
+                  <ul className={`mobile-navigation ${toggleNav ? 'active' : ''}`}>
+                    <Navigation />
+                  </ul>
+                </>
+            }
+          </nav>
         </div>
       </div>
     </header>
   )
 }
+
+
 
 export default Header

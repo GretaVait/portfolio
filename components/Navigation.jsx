@@ -1,18 +1,19 @@
 import scrollTo from "@client-api/smoothScroll"
 
-const Navigation = ({ open }) => {
+const Navigation = () => {
 
   return (
-    <nav className={`mobile-navigation ${open ? 'active' : ''}`}>
-      <ul>
-        <li>
-          <h5 onClick={() => { scrollTo('elem', 'projects', -8) }}>Projects</h5>
-          <h5 onClick={() => { scrollTo('elem', 'about', -8) }}>About</h5>
-          <h5 onClick={() => { scrollTo('elem', 'contact', 0) }}>Contact</h5>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <NavigationItem label="Projects" />
+      <NavigationItem label="About" />
+      <NavigationItem label="Contact" />
+      <li><a href="/images/resume.pdf" target="_blank" rel="noreferrer"><h5>Resume</h5></a></li>
+    </>
   )
 }
+
+const NavigationItem = ({ label }) => (
+  <li><h5 onClick={() => { scrollTo('elem', label.toLowerCase(), 0) }} role="button">{label}</h5></li>
+)
 
 export default Navigation
