@@ -12,9 +12,8 @@ const About = () => {
         </h2>
 
         <div className="about__list">
-          <AboutCard title="Dev" skills={["React.js", "HTML", "CSS, Sass", "Next.js"]} />
-          <AboutCard title="Tools" skills={["React.js", "HTML", "CSS, Sass", "Next.js"]} />
-          <AboutCard title="Design" skills={["React.js", "HTML", "CSS, Sass", "Next.js"]} />
+          <AboutCard title="Dev" skills={["HTML5, CSS3, JavaScript", "Sass", "Styled Components", "React.js, Redux, Router", "Next.js", "Git", "Node.js, Yarn, Npm"]} />
+          <AboutCard title="Tools" skills={["Adobe XD", "Adobe Illustrator", "Figma"]} />
         </div>
       </div>
     </section>

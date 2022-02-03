@@ -15,7 +15,7 @@ const Projects = () => {
               <h5>Web Development</h5>
             </div>
             <div className="projects__filter__name" role="button">
-              <h5>Mobile Deveopment</h5>
+              <h5>Mobile Development</h5>
             </div>
             <div className="projects__filter__name" role="button">
               <h5>Design</h5>

@@ -1,4 +1,3 @@
-import Seperator from "@components/Seperator"
 
 const Intro = () => {
 
