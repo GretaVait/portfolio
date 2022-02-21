@@ -47,7 +47,7 @@
           color: $pink
 
   &__list
-    @include flex($justify: space-between, $wrap: wrap)
+    @include flex($dir: column, $align: flex-start)
     position: relative
     margin-top: 3.2rem
     &__card
@@ -57,23 +57,34 @@
       left: 0
       transform: translateY(4rem)
       @include transition()
-      width: 100%
-      height: 28rem
-      background-color: $black
-      color: white
-      margin-bottom: 3.2rem
-
-      @media screen and ( min-width: 768px )
-        width: calc(50% - 2.4rem)
-        margin-bottom: 4.8rem
-
-      @media screen and ( min-width: 1120px )
-        height: 37rem
-        width: calc(50% - 3.2rem)
-        margin-bottom: 6.4rem
+      pointer-events: none
+      
+      @media (hover: hover)
+        &:hover
+          transform: translate(1.6rem, 0) !important
+          &::after
+            opacity: 1
 
       &.active
         opacity: 1
-        position: static
-        transform: translateY(0)
-        
+        position: relative
+        transform: translate(0, 0)
+        pointer-events: auto
+      
+      &::after
+        content: url("/images/external-link.svg")
+        position: absolute
+        right: -3.2rem
+        top: 50%
+        width: 1.6rem
+        opacity: 0
+        transform: translateY(-50%)
+        @include transition(opacity)
+      
+      a
+        display: inline-block
+        text-decoration: underline
+        padding: 1.6rem 0
+
+        @media screen and ( min-width: 1120px )
+          padding: 2.4rem 0
