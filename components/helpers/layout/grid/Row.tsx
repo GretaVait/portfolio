@@ -2,13 +2,12 @@
 import styles from './Grid.module.sass'
 
 interface RowProps extends React.HTMLAttributes<HTMLDivElement> {
-  padding?: number
   position?: 'space-between' | 'center' | 'flex-start' | 'flex-end'
   align?: 'center' | 'flex-start' | 'flex-end' | 'baseline'
   children: React.ReactNode
 }
 
-const Row = ({ children, padding, position, align, ...rest }: RowProps) => {
+const Row = ({ children, position, align, ...rest }: RowProps) => {
   const { className, ...restProps } = rest
 
   return (

@@ -1,4 +1,4 @@
-@import ~styles/base/mixins
+@use 'styles/base/mixins'
 
 // Variables
 $position: space-between, center, flex-start, flex-end
@@ -39,7 +39,7 @@ $mobilePadding: 0 2.4rem !default
       &.align-#{$item}
         @include gridAlign($item)
 
-@include desktop
+@include mixins.desktop
   @for $i from 1 through 12
     @for $j from 1 through 12
       .column-#{$i}-#{$j}

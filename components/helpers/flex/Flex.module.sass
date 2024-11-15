@@ -1,5 +1,5 @@
-@import ~styles/base/mixins
-  
+@use 'styles/base/mixins'
+
 $align: flex-start, center, flex-end, baseline, stretch
 $justify: flex-start, center, flex-end, space-between, space-around, space-evenly, stretch
 $direction: row, column, column-reverse, row-reverse
@@ -45,7 +45,7 @@ $wrap: nowrap, wrap, wrap-reverse
       &-#{$i}
         row-gap: calc(.8rem * $i)
   
-    @include desktop
+    @include mixins.desktop
       &.spacing-lg
         &-#{$i}
           margin-bottom: calc(.8rem * $i)

@@ -33,7 +33,10 @@ const Title = ({
   const { className, ...restProps } = rest
 
   return (
-    <div className={`${styles.title} ${styles[textAlign]} ${className}`}>
+    <div
+      className={`${styles.title} ${styles[textAlign]} ${className}`}
+      {...restProps}
+    >
       <motion.div
         transition={{
           duration: 0.6

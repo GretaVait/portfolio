@@ -1,6 +1,6 @@
-@import ~styles/base/var
-@import ~styles/base/mixins
-@import $colors ~styles/base/array
+@use 'styles/base/var'
+@use 'styles/base/mixins'
+@use 'styles/base/array'
 
 $decoration: underline, lineThrough
 $transform: uppercase, capitalize, lowercase
@@ -8,63 +8,63 @@ $align: left, center, right
 $fontWeight: 400, 500, 600, 700
   
 .text
-  font-family: $rubik
+  font-family: var.$rubik
 
-  @each $color, $value in $colors
-    &.color-#{$color}
+  @each $color, $value in array.$colors
+    &.color-#{"" + $color}
       color: $value
   
   &.variant
     @for $i from 1 through 5
       &-body-#{$i}
-        font-weight: $regular
+        font-weight: var.$regular
     @for $i from 1 through 4
       &-title-#{$i}
-        font-family: $xanh
-        font-weight: $regular
+        font-family: var.$xanh
+        font-weight: var.$regular
     
     &-body-1
-      @include fontSize(1.6rem)
-      @include desktop
-        @include fontSize(1.8rem)
+      @include mixins.fontSize(1.6rem)
+      @include mixins.desktop
+        @include mixins.fontSize(1.8rem)
     
     &-body-2
-      @include fontSize(1.6rem)
+      @include mixins.fontSize(1.6rem)
     
     &-body-3
-      @include fontSize(1.6rem)
-      @include desktop
-        @include fontSize(2.4rem)
+      @include mixins.fontSize(1.6rem)
+      @include mixins.desktop
+        @include mixins.fontSize(2.4rem)
     
     &-body-4
-      @include fontSize(1.4rem)
-      @include desktop
-        @include fontSize(1.6rem)
+      @include mixins.fontSize(1.4rem)
+      @include mixins.desktop
+        @include mixins.fontSize(1.6rem)
     
     &-body-5
-      @include fontSize(1.2rem)
-      @include desktop
-        @include fontSize(1.4rem)
+      @include mixins.fontSize(1.2rem)
+      @include mixins.desktop
+        @include mixins.fontSize(1.4rem)
     
     &-title-1
-      @include fontSize(6.4rem)
-      @include desktop
-        @include fontSize(15rem)
+      @include mixins.fontSize(6.4rem)
+      @include mixins.desktop
+        @include mixins.fontSize(15rem)
     
     &-title-2
-      @include fontSize(4.8rem)
-      @include desktop
-        @include fontSize(9rem)
+      @include mixins.fontSize(4.8rem)
+      @include mixins.desktop
+        @include mixins.fontSize(9rem)
     
     &-title-3
-      @include fontSize(2.4rem)
-      @include desktop
-        @include fontSize(3.2rem)
+      @include mixins.fontSize(2.4rem)
+      @include mixins.desktop
+        @include mixins.fontSize(3.2rem)
     
     &-title-4
-      @include fontSize(2rem)
-      @include desktop
-        @include fontSize(2.4rem)
+      @include mixins.fontSize(2rem)
+      @include mixins.desktop
+        @include mixins.fontSize(2.4rem)
     
     &-inherit
       font-size: inherit
@@ -91,7 +91,7 @@ $fontWeight: 400, 500, 600, 700
       &-#{$i}
         margin-bottom: calc(.8rem * $i)
   
-    @include desktop
+    @include mixins.desktop
       &.spacing-lg
         &-#{$i}
           margin-bottom: calc(.8rem * $i)

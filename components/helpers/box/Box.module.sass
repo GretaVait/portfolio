@@ -1,9 +1,8 @@
-@import ~styles/base/var
-@import ~styles/base/mixins
-@import $colors ~styles/base/array
+@use 'styles/base/mixins'
+@use 'styles/base/array'
 
 .box
-  @each $color, $value in $colors
+  @each $color, $value in array.$colors
     @for $i from 1 through 100
       &.backgroundColor-#{$color}-#{$i}
         background-color: transparentize($value, calc((100 - $i) / 100) )
@@ -23,7 +22,7 @@
       &-#{$i}
         padding: calc(.8rem * $i)
   
-    @include desktop
+    @include mixins.desktop
       &.spacing-lg
         &-#{$i}
           margin-bottom: calc(.8rem * $i)
