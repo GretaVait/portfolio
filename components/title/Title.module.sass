@@ -1,0 +1,23 @@
+@import ~styles/base/mixins
+
+.title
+  position: relative
+  isolation: isolate
+  width: 100%
+
+  &.left
+    .ghostTitle
+      left: 0
+  
+  &.center
+    .ghostTitle
+      left: 50%
+      transform: translate(-50%, 100%)
+
+  .ghostTitle
+    @include absolute($bottom: 4rem)
+    transform: translateY(100%)
+    z-index: -1
+    width: 100%
+    @include desktop
+      bottom: 8rem

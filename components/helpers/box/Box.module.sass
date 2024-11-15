@@ -1,0 +1,33 @@
+@import ~styles/base/var
+@import ~styles/base/mixins
+@import $colors ~styles/base/array
+
+.box
+  @each $color, $value in $colors
+    @for $i from 1 through 100
+      &.backgroundColor-#{$color}-#{$i}
+        background-color: transparentize($value, calc((100 - $i) / 100) )
+
+  &.overflow
+    &-hidden
+      overflow: hidden
+    &-visible
+      overflow: visible
+  
+  @for $i from 1 through 12
+    &.spacing-sm
+      &-#{$i}
+        margin-bottom: calc(.8rem * $i)
+    
+    &.padding-sm
+      &-#{$i}
+        padding: calc(.8rem * $i)
+  
+    @include desktop
+      &.spacing-lg
+        &-#{$i}
+          margin-bottom: calc(.8rem * $i)
+    
+      &.padding-lg
+        &-#{$i}
+          padding: calc(.8rem * $i)

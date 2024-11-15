@@ -1,0 +1,73 @@
+@import ~styles/base/mixins
+  
+$align: flex-start, center, flex-end, baseline, stretch
+$justify: flex-start, center, flex-end, space-between, space-around, space-evenly, stretch
+$direction: row, column, column-reverse, row-reverse
+$wrap: nowrap, wrap, wrap-reverse
+  
+.flex
+  display: flex
+
+  &.display
+    &-inline-flex
+      display: inline-flex
+  
+  @each $item in $align
+    &.alignItems-#{$item}
+      align-items: $item
+
+  @each $item in $justify
+    &.justifyContent-#{$item}
+      justify-content: $item
+
+  @each $item in $direction
+    &.flexDirection-#{$item}
+      flex-direction: $item
+      &.stackMobile
+        flex-direction: column
+        @media screen and ( min-width: 1168px )
+          flex-direction: $item
+      &.stackDesktop
+        flex-direction: $item
+        @media screen and ( min-width: 1168px )
+          flex-direction: column
+  
+  @for $i from 1 through 12
+    &.spacing-sm
+      &-#{$i}
+        margin-bottom: calc(.8rem * $i)
+    
+    &.columnGap-sm
+      &-#{$i}
+        column-gap: calc(.8rem * $i)
+    
+    &.rowGap-sm
+      &-#{$i}
+        row-gap: calc(.8rem * $i)
+  
+    @include desktop
+      &.spacing-lg
+        &-#{$i}
+          margin-bottom: calc(.8rem * $i)
+
+      &.columnGap-lg
+        &-#{$i}
+          column-gap: calc(.8rem * $i)
+
+      &.rowGap-lg
+        &-#{$i}
+          row-gap: calc(.8rem * $i)
+
+  @each $item in $wrap
+    &.wrap-#{$item}
+      flex-wrap: $item
+  
+  &.fullHeight
+    height: 100%
+  
+  &.fullWidth
+    width: 100%
+  
+  &.center
+    align-items: center
+    justify-content: center

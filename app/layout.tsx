@@ -2,6 +2,9 @@
 import type { Metadata } from "next";
 import { Rubik, Xanh_Mono } from "next/font/google";
 
+// Styles
+import "./globals.sass";
+
 const xanh = Xanh_Mono({
   subsets: ["latin"],
   weight: ["400"],

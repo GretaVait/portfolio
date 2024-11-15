@@ -1,0 +1,97 @@
+@import ~styles/base/var
+@import ~styles/base/mixins
+@import $colors ~styles/base/array
+
+$decoration: underline, lineThrough
+$transform: uppercase, capitalize, lowercase
+$align: left, center, right
+$fontWeight: 400, 500, 600, 700
+  
+.text
+  font-family: $rubik
+
+  @each $color, $value in $colors
+    &.color-#{$color}
+      color: $value
+  
+  &.variant
+    @for $i from 1 through 5
+      &-body-#{$i}
+        font-weight: $regular
+    @for $i from 1 through 4
+      &-title-#{$i}
+        font-family: $xanh
+        font-weight: $regular
+    
+    &-body-1
+      @include fontSize(1.6rem)
+      @include desktop
+        @include fontSize(1.8rem)
+    
+    &-body-2
+      @include fontSize(1.6rem)
+    
+    &-body-3
+      @include fontSize(1.6rem)
+      @include desktop
+        @include fontSize(2.4rem)
+    
+    &-body-4
+      @include fontSize(1.4rem)
+      @include desktop
+        @include fontSize(1.6rem)
+    
+    &-body-5
+      @include fontSize(1.2rem)
+      @include desktop
+        @include fontSize(1.4rem)
+    
+    &-title-1
+      @include fontSize(6.4rem)
+      @include desktop
+        @include fontSize(15rem)
+    
+    &-title-2
+      @include fontSize(4.8rem)
+      @include desktop
+        @include fontSize(9rem)
+    
+    &-title-3
+      @include fontSize(2.4rem)
+      @include desktop
+        @include fontSize(3.2rem)
+    
+    &-title-4
+      @include fontSize(2rem)
+      @include desktop
+        @include fontSize(2.4rem)
+    
+    &-inherit
+      font-size: inherit
+      line-height: inherit
+
+  @each $value in $align
+    &.align-#{$value}
+      text-align: $value
+
+  @each $value in $decoration
+    &.decoration-#{$value}
+      text-decoration: $value
+
+  @each $value in $transform
+    &.transform-#{$value}
+      text-transform: $value
+
+  @each $value in $fontWeight
+    &.fontWeight-#{$value}
+      font-weight: $value
+
+  @for $i from 1 through 12
+    &.spacing-sm
+      &-#{$i}
+        margin-bottom: calc(.8rem * $i)
+  
+    @include desktop
+      &.spacing-lg
+        &-#{$i}
+          margin-bottom: calc(.8rem * $i)

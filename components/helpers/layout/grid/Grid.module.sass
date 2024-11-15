@@ -1,0 +1,46 @@
+@import ~styles/base/mixins
+
+// Variables
+$position: space-between, center, flex-start, flex-end
+$align: flex-start, flex-end, center, baseline
+  
+// Set the grid defaults
+$columnSize: 6.4rem !default
+$gutterSize: 3.2em !default
+$desktop: 116.8rem !default
+$mobilePadding: 0 2.4rem !default
+
+// Create a grid container to house the columns
+@mixin grid()
+  display: flex
+  flex-wrap: wrap
+
+@mixin gridPosition($position: flex-start)
+  justify-content: $position
+
+@mixin gridAlign($align: flex-start)
+  align-items: $align
+
+// Create a column of the grid
+@mixin column($columns: 0, $gutters: 0)
+  width: calc((#{$columns} * #{$columnSize}) + (#{$gutters} * #{$gutterSize}))
+  
+.row
+  width: 100%
+
+  @include desktop
+    @include grid()
+    
+    @each $item in $position
+      &.position-#{$item}
+        @include gridPosition($item)
+    
+    @each $item in $align
+      &.align-#{$item}
+        @include gridAlign($item)
+
+@include desktop
+  @for $i from 1 through 12
+    @for $j from 1 through 12
+      .column-#{$i}-#{$j}
+        @include column($i, $j)
