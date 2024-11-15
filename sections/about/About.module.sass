@@ -1,6 +1,6 @@
-@import ~styles/base/mixins
-@import ~styles/base/var
+@use 'styles/base/mixins'
+@use 'styles/base/var'
 
 .section
-  @include spacingSm
-  background-color: $beige
+  background-color: var.$beige
+  @include mixins.spacingSm

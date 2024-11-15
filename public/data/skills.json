@@ -1,0 +1,30 @@
+[
+  {
+    "image": {
+      "src": "/images/skills/stripe.png",
+      "alt": "Stripe payment form"
+    },
+    "heading": "Stripe payment processing"
+  },
+  {
+    "image": {
+      "src": "/images/skills/tools.png",
+      "alt": "Next.js, Vercel, Typescript, React.js, Redux"
+    },
+    "heading": "Tools I love to use"
+  },
+  {
+    "image": {
+      "src": "/images/skills/analytics.png",
+      "alt": "Facebook pixel, TikTok pixel, GA, NextAuth, Strapi"
+    },
+    "heading": "Tracking, analytics, CMS, auth and anything in between"
+  },
+  {
+    "image": {
+      "src": "/images/skills/styling.png",
+      "alt": "Styled Components, CSS3, Sass, TailwindCSS"
+    },
+    "heading": "Styling for the win"
+  }
+]
