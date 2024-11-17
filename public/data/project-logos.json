@@ -1,0 +1,32 @@
+[
+  {
+    "src": "/images/logos/sos-vaiku-kaimai.png",
+    "width": 132,
+    "height": 48,
+    "alt": "SOS vaikų kaimai logo"
+  },
+  {
+    "src": "/images/logos/rinvest.png",
+    "width": 132,
+    "height": 23,
+    "alt": "Rinvest logo"
+  },
+  {
+    "src": "/images/logos/markid.png",
+    "width": 132,
+    "height": 40,
+    "alt": "MarkID logo"
+  },
+  {
+    "src": "/images/logos/pakruojo-dvaras.png",
+    "width": 66,
+    "height": 48,
+    "alt": "Pakruojo dvaras logo"
+  },
+  {
+    "src": "/images/logos/ratepunk.png",
+    "width": 132,
+    "height": 32,
+    "alt": "RatePunk logo"
+  }
+]
